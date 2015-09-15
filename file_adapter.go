@@ -3,7 +3,6 @@ package main
 import (
 	"io/ioutil"
 	"os"
-	"path/filepath"
 
 	"github.com/google/gxui"
 	"github.com/google/gxui/math"
@@ -44,7 +43,7 @@ func (a *fileAdapter) Create(theme gxui.Theme, index int) gxui.Control {
 }
 
 func (a *fileAdapter) Reload() error {
-	dirname, err := filepath.Abs(".")
+	dirname, err := os.Getwd()
 
 	if err != nil {
 		return err
