@@ -10,13 +10,11 @@ import (
 func fileItem(theme gxui.Theme, file os.FileInfo) gxui.Control {
 	layout := theme.CreateLinearLayout()
 	layout.SetDirection(gxui.LeftToRight)
-	var iconId rune
+	iconID := materialicon.IconInsertDriveFile
 	if file.IsDir() {
-		iconId = materialicon.IconFolder
-	} else {
-		iconId = materialicon.IconInsertDriveFile
+		iconID = materialicon.IconFolderOpen
 	}
-	icon := materialicon.CreateIcon(theme, iconId, 12)
+	icon := materialicon.CreateIcon(theme, iconID, 12)
 	layout.AddChild(icon)
 
 	name := theme.CreateLabel()
