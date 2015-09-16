@@ -4,7 +4,6 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/aoisensi/gxui-material-icon"
 	"github.com/google/gxui"
 	"github.com/google/gxui/drivers/gl"
 	"github.com/google/gxui/math"
@@ -12,7 +11,6 @@ import (
 )
 
 func appMain(driver gxui.Driver) {
-	materialicon.SetDriver(driver)
 	theme := dark.CreateTheme(driver)
 	window := theme.CreateWindow(800, 600, "gxpl")
 	list := theme.CreateList()
